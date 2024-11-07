@@ -96,7 +96,7 @@ button:focus-visible {
   }
 } */
 .bodyCnt {
-  background-color: antiquewhite;
+  background-color: wheat;
   display: inline-flex;
   flex: 1;
   flex-direction: column;
@@ -129,9 +129,34 @@ button:focus-visible {
 }
 
 .profileCnt:hover {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .btnCSS:hover {
   border: 2px solid blue;
+}
+
+.boxCnt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modalBtn {
+  border: 5px solid black;
+  width: 100px;
+  height: 40px;
+  border-radius:10%;
+}
+
+.modalCSS {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  z-index: 2000;
+  position: relative;
+  border: 2px solid grey;
+  border-radius: 10px;
+  opacity: none !important;
 }
