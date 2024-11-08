@@ -2,6 +2,7 @@ import './style.css';
 import javascriptLogo from './javascript.svg';
 import viteLogo from '/vite.svg';
 import { setupCounter } from './counter.js';
+import { practice } from './practice.js';
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -148,3 +149,5 @@ document.querySelector(".modalBtn").addEventListener('click',()=>{
    document.querySelector(".bodyCnt").style="background-color: pink ; opacity: 50%"
    document.querySelector(".bodyCnt").appendChild(modalDiv);
 })
+
+practice();
