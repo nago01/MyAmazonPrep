@@ -160,3 +160,13 @@ button:focus-visible {
   border-radius: 10px;
   opacity: none !important;
 }
+
+.tikTakGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+}
+
+.btnCnt {
+  
+}
