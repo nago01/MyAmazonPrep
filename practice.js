@@ -46,7 +46,7 @@ export function practice() {
     let xArr = [];
     let yArr = [];
     let xTurn = true;
-    let pattern = [[0, 1, 2], [3, 4, 5], [6, 7, 8] , [0, 4, 7], [2, 5, 8], [3, 6, 9] , [0, 4, 8], [2, 4, 6]];
+    let pattern = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 9], [0, 4, 8], [2, 4, 6]];
     let btn = document.querySelectorAll('.btnCnt');
     console.log(btn)
     btn.forEach((item) => {
@@ -57,9 +57,9 @@ export function practice() {
         else {
           item.innerHTML = 'O';
         }
-        
+
         checkWinner();
-        
+
         item.disabled = true;
       })
 
@@ -77,27 +77,27 @@ export function practice() {
       }
       for (let win of pattern) {
         let check = false;
-        console.log(xTurn , 'xTirn');
-        if(xTurn){
-        for(let i=0;i<win.length;i++){
-          if(!xArr.includes(win[i])){
-            check = true;
+        console.log(xTurn, 'xTirn');
+        if (xTurn) {
+          for (let i = 0; i < win.length; i++) {
+            if (!xArr.includes(win[i])) {
+              check = true;
+            }
           }
         }
-      }
-      else {
-        console.log('called');
-        for(let i=0;i<win.length;i++){
-          if(!yArr.includes(win[i])){
-            check = true;
+        else {
+          console.log('called');
+          for (let i = 0; i < win.length; i++) {
+            if (!yArr.includes(win[i])) {
+              check = true;
+            }
           }
         }
-      }
-        if(check == false){
+        if (check == false) {
           alert(xTurn ? "X WINS" : "Y WINS");
         }
       }
-     
+
       xTurn = !xTurn;
     }
   }
