@@ -15,74 +15,64 @@ export function practice() {
     return typeof (Number(ans));
   }
 
-    function square(num) {
-      let sq = num ** 2;
-      return sq;
-    }
-
-    function sumOfSquare(num1, num2) {
-      let a = square(num1);
-      let b = square(num2);
-      return a + b;
-    }
-
-    console.log(sumOfSquare(6, 3));
-
-
-    function tikTok() {
-      let xArr = [];
-      let yArr = [];
-      let xTurn = true;
-      let pattern = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 9], [0, 4, 8], [2, 4, 6]];
-      let btn = document.querySelectorAll('.btnCnt');
-      btn.forEach((item) => {
-        item.addEventListener('click', (e) => {
-          if (xTurn) {
-            item.innerHTML = 'X';
-          }
-          else {
-            item.innerHTML = 'O';
-          }
-          checkWinner();
-          item.disabled = true;
-        })
-      })
-      function checkWinner() {
-        for (let i = 0; i < btn.length; i++) {
-          if (btn[i].innerHTML == 'X') {
-            xArr.push(i);
-          }
-          else if (btn[i].innerHTML == 'O') {
-            yArr.push(i);
-          }
-        }
-        for (let win of pattern) {
-          let check = false;
-          console.log(xTurn, 'xTirn');
-          if (xTurn) {
-            for (let i = 0; i < win.length; i++) {
-              if (!xArr.includes(win[i])) {
-                check = true;
-              }
-            }
-          }
-          else {
-            console.log('called');
-            for (let i = 0; i < win.length; i++) {
-              if (!yArr.includes(win[i])) {
-                check = true;
-              }
-            }
-          }
-          if (check == false) {
-            alert(xTurn ? "X WINS" : "Y WINS");
-          }
-        }
-        xTurn = !xTurn;
-      }
-    }
-
-    tikTok();
+  function square(num) {
+    let sq = num ** 2;
+    return sq;
   }
 
-  practice();
+  function sumOfSquare(num1, num2) {
+    let a = square(num1);
+    let b = square(num2);
+    return a + b;
+  }
+
+  console.log(sumOfSquare(6, 3));
+
+
+  function tikTok() {
+    let xArr = [];
+    let yArr = [];
+    let xTurn = true;
+    let pattern = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 9], [0, 4, 8], [2, 4, 6]];
+    let btn = document.querySelectorAll('.btnCnt');
+    btn.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        if (xTurn) {
+          item.innerHTML = 'X';
+        }
+        else {
+          item.innerHTML = 'O';
+        }
+        checkWinner();
+        item.disabled = true;
+      })
+    })
+    function checkWinner() {
+      let check = false;
+      for (let win of pattern) {
+        if (xTurn) {
+          console.log(btn[win[0]].innerText , 'btn[win[0]].innerText ');
+          if (btn[win[0]].innerText === btn[win[1]].innerText && btn[win[0]].innerText === btn[win[2]].innerText && btn[win[0]].innerText === 'X') {
+            check = true;
+            break;
+          }
+        }
+        else {
+          if (btn[win[0]].innerText === btn[win[1]].innerText && btn[win[0]].innerText === btn[win[2]].innerText && btn[win[0]].innerText === 'O') {
+            check = true;
+            break;
+          }
+        }
+
+      }
+      if (check == true) {
+        alert(xTurn ? "X WINS" : "Y WINS");
+      }
+      xTurn = !xTurn;
+    }
+  }
+
+  tikTok();
+}
+
+practice();
