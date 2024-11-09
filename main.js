@@ -23,7 +23,8 @@ import { practice } from './practice.js';
 // `;
 
 // setupCounter(document.querySelector('#counter'));
-
+let sads = document.querySelectorAll('button');
+console.log(sads, 'sadsadaa');
 let count = 0;
 let btn = document.querySelector('.buttonCSS');
 // let btn2 = document.getElementById('btn1');

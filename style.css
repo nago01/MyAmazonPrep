@@ -170,3 +170,19 @@ button:focus-visible {
 .btnCnt {
   
 }
+
+.bodyCSS {
+  display: flex;
+  height: 100vh;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.scoreCnt {
+  display: inline-flex;
+  width: 200px;
+  border: 2px solid grey;
+  justify-content: space-between;
+}
