@@ -105,6 +105,7 @@ button:focus-visible {
   width: 1000px;
   height: 1000px;
 }
+
 .buttonCSS {
   background-color: red;
 }
@@ -147,7 +148,7 @@ button:focus-visible {
   border: 5px solid black;
   width: 100px;
   height: 40px;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 .modalCSS {
@@ -167,9 +168,7 @@ button:focus-visible {
   grid-template-rows: repeat(3, 200px);
 }
 
-.btnCnt {
-  
-}
+.btnCnt {}
 
 .bodyCSS {
   display: flex;
@@ -186,4 +185,36 @@ button:focus-visible {
   width: 200px;
   border: 2px solid grey;
   justify-content: space-between;
+}
+
+/* ---------------------- POSITION CSS PRACTICE -----------------------*/
+
+
+.positionCheck {
+  background-color: blue;
+  width: 1000px;
+  height: 200vh;
+  /* overflow-y: scroll; */
+  position: relative;
+}
+
+.btn1 {
+  position: fixed;
+  top: 200px;
+  z-index: 1;
+}
+
+.btn2 {
+  position: relative;
+  top: 50px;
+}
+
+.btn3 {
+  position: absolute;
+  left: 50px;
+}
+
+.btn4 {
+  position: sticky;
+  top: 100px;
 }
