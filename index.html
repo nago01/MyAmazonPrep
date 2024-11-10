@@ -10,7 +10,7 @@
 
 <body>
   <!-- <div id="app"></div> -->
-  <script type="module" src="/debouncingThrottling.js"></script>
+  <script type="module" src="/playWithObjects.js"></script>
 
   <!-- <div class="bodyCnt">
       <div style="background-color: green ; width: 100px; height: 20px;">Hello World</div>
@@ -131,15 +131,25 @@
   <!-- </div> -->
 
   <div class="positionCheck">
-     <button class="btn1">fixed This button is fixed 100px from top even for scroll, with respect to window</button>
+     <!-- <button class="btn1">fixed This button is fixed 100px from top even for scroll, with respect to window</button>
      <button class="btn2">relative to its positon will be at 50px down but will take the space</button>
      <button class="btn3">absolute will position itself with 10px left respect to nearest absolute, will not take up space at original</button>
      
-     <button class="btn4">sticky with respect to container wher it is defined</button>
+     <button class="btn4">sticky with respect to container wher it is defined</button> -->
   </div>
   <div class="positionCheck" style="background-color: red;">
-  
+ 
  </div>
+ <form >
+  Add New User form
+  <div style="display:flex ; flex-direction:column ; background-color:grey">
+  firstName: <input type="text" id="name"/>
+  id: <input type="text" id="identi"/>
+  age: <input type="text" id="age"/>
+  </div>
+  <!-- <input type="submit" id="subBtn"/> -->
+  <button id="normalSubmit">Click Me To Add details</button>
+</form>
 
 </body>
 

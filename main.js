@@ -21,6 +21,16 @@ import { practice } from './practice.js';
 //     </p>
 //   </div>
 // `;
+let htmlString = `<button class="btn1">fixed This button is fixed 100px from top even for scroll, with respect to window</button>
+<button class="btn2">relative to its positon will be at 50px down but will take the space</button>
+<button class="btn3">absolute will position itself with 10px left respect to nearest absolute, will not take up space at original</button>
+
+<button class="btn4">sticky with respect to container wher it is defined</button>`
+
+console.log(document.querySelector('.positionCheck'), 'document.querySelector');
+document.querySelector('.positionCheck').innerHTML = htmlString;
+
+
 
 // setupCounter(document.querySelector('#counter'));
 let sads = document.querySelectorAll('button');
@@ -154,3 +164,5 @@ document.querySelector(".modalBtn").addEventListener('click', () => {
 
 
 practice();
+
+playWithObject();
