@@ -32,10 +32,14 @@ export function playWithObject() {
     
 
     let inputBox = document.querySelectorAll('input');
+    console.log(inputBox , 'inputBox');
     showList();
     inputBox.forEach((item) => {
         item.addEventListener('change', (e) => {
-            console.log(e, 'e');
+            
+            if(e.target.id === "rname"){
+              removeObj(e.target.value);
+            }
         })
     })
     // to do how to handle form data
@@ -43,9 +47,9 @@ export function playWithObject() {
     //    console.log(e , 'submit called');
     // })  
 
-    document.getElementById('normalSubmit').addEventListener('click', (e) => {
+    document.getElementById('subBtn').addEventListener('click', (e) => {
         e.preventDefault();
-        console.log(e, 'submit called');
+        document.querySelector('.positionCheck').innerHTML = "";
         let newObject = {};
         newObject["firstName"] = inputBox[0].value;
         newObject["id"] = inputBox[1].value;
@@ -61,6 +65,16 @@ export function playWithObject() {
             newEle.innerText = parsedUserList[i].firstName + ":" + parsedUserList[i].id;
             document.querySelector('.positionCheck').appendChild(newEle);
         }
+        document.querySelector('.positionCheck').style = "margin: 10px";
+    }
+
+    function removeObj(rname){
+      document.querySelector('.positionCheck').innerHTML = "";
+      parsedUserList =  parsedUserList.filter((item)=>{
+        return item.firstName!=rname;
+      })
+      console.log(parsedUserList,'parsedUserList');
+      showList();
     }
 }
 
