@@ -218,3 +218,41 @@ button:focus-visible {
   position: sticky;
   top: 100px;
 }
+
+.caraousalCtn {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: fit-content;
+  background-color: red;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  display: flex;
+  background-color: antiquewhite;
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+
+}
+
+.card1 {
+  display: flex;
+  background-color: antiquewhite;
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+  z-index: 1000;
+}
+
+.btnCtn {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  justify-content: space-between;
+  height: fit-content;
+  background-color: aqua;
+
+}

@@ -1,8 +1,32 @@
 import './style.css';
-import javascriptLogo from './javascript.svg';
-import viteLogo from '/vite.svg';
-import { setupCounter } from './counter.js';
 import { practice } from './practice.js';
+
+function Carausal() {
+  document.getElementById('btnGroup').addEventListener('click',(e)=>{
+  
+    let allCards = document.querySelectorAll('.card');
+    console.log(allCards, 'allCards');
+    if(e.target.id==="btn1"){
+      console.log('called 1');
+      allCards[1].style.zIndex = 1;
+      allCards[2].style.zIndex = 1;
+      allCards[0].style.zIndex = 1000;
+    }
+    else if(e.target.id==="btn2"){
+      console.log('called 2');
+      allCards[0].style.zIndex = 1;
+      allCards[2].style.zIndex = 1;
+      allCards[1].style.zIndex = 1000;
+    }
+    else {
+      console.log('called 3');
+      allCards[1].style.zIndex = 1;
+      allCards[0].style.zIndex = 1;
+      allCards[2].style.zIndex = 1000;
+    }
+  });
+}
+Carausal();
 
 // document.querySelector('#app').innerHTML = `
 //   <div>
@@ -27,10 +51,7 @@ let htmlString = `<button class="btn1">fixed This button is fixed 100px from top
 
 <button class="btn4">sticky with respect to container wher it is defined</button>`
 
-console.log(document.querySelector('.positionCheck'), 'document.querySelector');
 document.querySelector('.positionCheck').innerHTML = htmlString;
-
-
 
 // setupCounter(document.querySelector('#counter'));
 let sads = document.querySelectorAll('button');
@@ -162,7 +183,10 @@ document.querySelector(".modalBtn").addEventListener('click', () => {
   document.querySelector(".bodyCnt").appendChild(modalDiv);
 })
 
+// counterNew();
 
 practice();
 
 playWithObject();
+
+
