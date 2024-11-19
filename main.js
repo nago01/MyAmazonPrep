@@ -7,6 +7,7 @@ function gridCnt() {
     let newEle = document.createElement('button');
     newEle.id = 'box' + i;
     newEle.innerText = i;
+
     document.getElementById('gridId').appendChild(newEle);
   };
 }
