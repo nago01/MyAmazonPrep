@@ -1,28 +1,81 @@
 import './style.css';
 import { practice } from './practice.js';
 
+let mapping = [1, 0, 3, 2, 5, 4, 7, 6, 9, 8, 11, 10, 13, 12, 15, 14];
+function gridCnt() {
+  for (let i = 0; i < 16; i++) {
+    let newEle = document.createElement('button');
+    newEle.id = 'box' + i;
+    newEle.innerText = i;
+    document.getElementById('gridId').appendChild(newEle);
+  };
+}
+gridCnt();
+let currSelection = -1;
+document.getElementById('gridId').addEventListener('click', (e) => {
+  console.log(typeof(parseInt(e.target.innerText)), 'typeOf');
+  if (currSelection === -1) {
+    currSelection = e.target.innerText;
+  }
+  else {
+    if (mapping[currSelection] == e.target.innerText) {
+      console.log('called the logic');
+      document.getElementById('box' + e.target.innerText).style.backgroundColor = 'red';
+      document.getElementById('box' + currSelection).style.backgroundColor = 'red';
+      currSelection = -1;
+    }
+    else {
+      currSelection = -1;
+    }
+  }
+  console.log(currSelection, 'currSelection after');
+});
+
+function printval() {
+  var val = 1;
+  setInterval(() => {
+    console.log(val, 'val');
+    val++;
+  }, 1000)
+}
+// printval();
+
+let fun = function () {
+  console.log('called the anou');
+};
+fun();
+
 function Carausal() {
-  document.getElementById('btnGroup').addEventListener('click',(e)=>{
-  
+  document.getElementById('btnGroup').addEventListener('click', (e) => {
+
     let allCards = document.querySelectorAll('.card');
     console.log(allCards, 'allCards');
-    if(e.target.id==="btn1"){
+    if (e.target.id === "btn1") {
       console.log('called 1');
       allCards[1].style.zIndex = 1;
       allCards[2].style.zIndex = 1;
       allCards[0].style.zIndex = 1000;
+      allCards[0].style.background = 'grey';
+      allCards[1].style.background = 'white';
+      allCards[2].style.background = 'white';
     }
-    else if(e.target.id==="btn2"){
+    else if (e.target.id === "btn2") {
       console.log('called 2');
       allCards[0].style.zIndex = 1;
       allCards[2].style.zIndex = 1;
       allCards[1].style.zIndex = 1000;
+      allCards[1].style.background = 'grey';
+      allCards[0].style.background = 'white';
+      allCards[2].style.background = 'white';
     }
     else {
       console.log('called 3');
       allCards[1].style.zIndex = 1;
       allCards[0].style.zIndex = 1;
       allCards[2].style.zIndex = 1000;
+      allCards[2].style.background = 'grey';
+      allCards[1].style.background = 'white';
+      allCards[0].style.background = 'white';
     }
   });
 }
@@ -188,5 +241,4 @@ document.querySelector(".modalBtn").addEventListener('click', () => {
 practice();
 
 playWithObject();
-
 
