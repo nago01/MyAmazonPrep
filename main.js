@@ -13,11 +13,13 @@ function gridCnt() {
 gridCnt();
 let currSelection = -1;
 document.getElementById('gridId').addEventListener('click', (e) => {
-  console.log(typeof(parseInt(e.target.innerText)), 'typeOf');
+  console.log(typeof (parseInt(e.target.innerText)), 'typeOf');
   if (currSelection === -1) {
     currSelection = e.target.innerText;
   }
   else {
+    // see this is important if we check === this will check the type as well,
+    // and e.target.innerText type will be string which , therefore we use ==
     if (mapping[currSelection] == e.target.innerText) {
       console.log('called the logic');
       document.getElementById('box' + e.target.innerText).style.backgroundColor = 'red';
@@ -26,6 +28,7 @@ document.getElementById('gridId').addEventListener('click', (e) => {
     }
     else {
       currSelection = -1;
+
     }
   }
   console.log(currSelection, 'currSelection after');
