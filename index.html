@@ -10,7 +10,7 @@
 
 <body>
   <!-- <div id="app"></div> -->
-  <script type="module" src="/pieCart.js"></script>
+  <script type="module" src="/radioCheckBox.js"></script>
 
   <!-- <div>
     COUNTER GOES HERE
@@ -185,9 +185,37 @@
       
     </div>
   </div> -->
-  <input type="range" id="rangeId"></input>
+  <!-- <input type="range" id="rangeId" value="78"></input>
   <div class="piechart" id="piechartId">
+    
+  </div> -->
+
+  <div>Radio CheckBox Implementation Goes Here
+    <form id="formId" style="display: flex; flex-direction: column;" action="/demo">
+      <label>Name:</label>
+      <input id="nameId" type="text"></input>
+      <label>Age:</label>
+      <input id="ageId" type="number"></input>
+      <div>
+        <label>Married:</label>
+        <label>happy-></label><input id="magId1" type="radio" name="married"></input>
+        <label>sad-></label><input id="magId2" type="radio" name="married"></input>
+      </div>
+      <div style="display: flex;">Choice:
+        <label>1st Option:</label><input id="choiceId1" type="checkbox" name="marriedStatus"></input>
+        <label>2nd Option:</label><input id="choiceId2" type="checkbox" name="marriedStatus"></input>
+        <label>3rd Option:</label><input id="choiceId3" type="checkbox" name="marriedStatus"></input>
+      </div>
+      <input type="submit" id="submitBtn" value="Submit the Form"></input>
+    </form>
+    <table id="tableId">
+      <th>Name</th>
+      <th>Age</th>
+      <th>Married Status</th>
+      <th>Choices</th>
+    </table>
   </div>
+
 </body>
 
 </html>
