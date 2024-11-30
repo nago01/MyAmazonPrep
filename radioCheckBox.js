@@ -1,32 +1,32 @@
 import './style.css';
 function radioCheckBox() {
-      let name="";
-      let age = 0;
-      let marriedHappy = false;
-      let choices = [];
-      document.getElementById('formId').addEventListener('input',(e)=>{
-         console.log(e,'e.target');
-         let ele = e.target;
-         if(ele.id=="nameId"){
+    let name = "";
+    let age = 0;
+    let marriedHappy = false;
+    let choices = [];
+    document.getElementById('formId').addEventListener('input', (e) => {
+        console.log(e, 'e.target');
+        let ele = e.target;
+        if (ele.id == "nameId") {
             name = e.target.value;
-         }
-         else if(ele.id=="ageId"){
+        }
+        else if (ele.id == "ageId") {
             age = ele.value;
-         }
-         else if(ele.id=="magId1" || ele.id=="magId2"){
-               if(ele.id=="magId1"){
+        }
+        else if (ele.id == "magId1" || ele.id == "magId2") {
+            if (ele.id == "magId1") {
                 marriedHappy = true;
-               }
-               else {
+            }
+            else {
                 marriedHappy = false;
-               }
-         }
-         else {
+            }
+        }
+        else {
             choices.push(ele.id);
-         }
-         console.log(name ,age , marriedHappy , choices);
-      })
-      document.getElementById('formId').addEventListener('submit',(e)=>{
+        }
+        console.log(name, age, marriedHappy, choices);
+    })
+    document.getElementById('formId').addEventListener('submit', (e) => {
         console.log('clicked')
         e.preventDefault();
         let table = document.getElementById('tableId');
@@ -45,7 +45,9 @@ function radioCheckBox() {
         rData.appendChild(newMarriedStatus);
         rData.appendChild(newChoices);
         table.appendChild(rData);
-      })
+        console.log(document.getElementById('formId').children, 'allChildNodes')
+    })
+
 }
 
 // function getObject(arr){
